@@ -1,0 +1,84 @@
+body {
+    box-sizing: border-box;
+    font-family: "Orbitron", "Ubuntu", Roboto, sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .calculator {
+    background-color: #3A4655;
+    border-radius: 10px;
+    box-shadow: 0 8px 50px -7px black;
+    border: 0.01vw solid black;
+    padding: 1.4vh 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    gap: 0.4vw;
+}
+
+.screen {
+    flex: 1 1 100%;
+}
+
+.screen.top-screen {
+    height: 20vh;
+    background: #889b9f3d;
+}
+
+.screen.bottom-screen {
+    height: 4vw;
+    background: #889b9f3d;
+    color: white;
+    padding: 1vh 1.2vw;
+    font-size: 3vw;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+    gap: 0.4vw;
+}
+
+.calculator .buttons button {
+    background-color: #425062;
+    color: lightgrey;
+    padding: 0.7vh 0.3vw;
+    font-size: 2.5vw;
+    flex: 1 1 23%;
+    border: none;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.calculator .buttons button:hover {
+    background-color: #475c77;
+}
+
+.calculator .buttons button[value="0"] {
+    flex: 1 1 48.1%;
+}
+
+.buttons button.operation {
+    color: lightgray;
+    background-color: #02ffbb4f ;
+}
+
+.buttons button.operation:hover {
+    background-color: #02ffbc73 ;
+}
+
+.buttons button.special-button {
+    background-color: #ff1e00cc;
+}
+
+.buttons button.special-button:hover {
+    background-color: #ff1e00;
+}
