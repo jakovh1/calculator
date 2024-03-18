@@ -1,6 +1,7 @@
 body {
     box-sizing: border-box;
     font-family: "Orbitron", "Ubuntu", Roboto, sans-serif;
+    background-color: lightslategray;
 }
 
 .container {
@@ -14,11 +15,10 @@ body {
     background-color: #3A4655;
     border-radius: 10px;
     box-shadow: 0 8px 50px -7px black;
-    border: 0.01vw solid black;
     padding: 1.4vh 1vw;
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    width: 40%;
     gap: 0.4vw;
 }
 
@@ -27,8 +27,21 @@ body {
 }
 
 .screen.top-screen {
-    height: 20vh;
+    height: 18vw;
     background: #889b9f3d;
+    color: white;
+    padding: 1vh 1.2vw;
+    font-size: 3vw;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    aspect-ratio: 16 / 9;
+
+}
+
+.screen.top-screen p {
+    margin: 0;
+    font-size: 1.1em;
 }
 
 .screen.bottom-screen {
@@ -37,13 +50,16 @@ body {
     color: white;
     padding: 1vh 1.2vw;
     font-size: 3vw;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    height: 50%;
+    height: 70%;
     gap: 0.4vw;
+    width: 100%;
 }
 
 .calculator .buttons button {
@@ -63,15 +79,17 @@ body {
 }
 
 .calculator .buttons button[value="0"] {
-    flex: 1 1 48.1%;
+    flex: 1 1 48.2%;
 }
 
-.buttons button.operation {
+.buttons button.operation,
+.buttons button[value='equal-sign'] {
     color: lightgray;
     background-color: #02ffbb4f ;
 }
 
-.buttons button.operation:hover {
+.buttons button.operation:hover,
+.buttons button[value='equal-sign']:hover {
     background-color: #02ffbc73 ;
 }
 
@@ -79,6 +97,62 @@ body {
     background-color: #ff1e00cc;
 }
 
+.buttons .special-button img {
+    width: 2.9vw;
+}
+
 .buttons button.special-button:hover {
     background-color: #ff1e00;
 }
+
+.calculator .buttons button[value="backspace"] {
+    padding: 0;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator .buttons button[value="backspace"]:hover {
+    background-color: hsla(7, 100%, 55%, 0.918);
+}
+
+:root {
+    --scrollbar-track-color: #2a2a2a; /* Track color */
+    --scrollbar-thumb-color: #555; /* Thumb color */
+    --scrollbar-thumb-hover-color: #777; /* Thumb color on hover */
+}
+
+
+.screen::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px;
+}
+
+.screen::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color); /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+.screen::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color); /* Color of the scrollbar thumb on hover */
+}
+
+.screen::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color); /* Color of the scrollbar track */
+}
+
+@media only screen and (min-width: 350px) and (max-width: 550px) {
+    
+    .container .calculator {
+        background-color: #3A4655;
+        border-radius: 10px;
+        box-shadow: 0 8px 50px -7px black;
+        padding: 1.4vh 1vw;
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        gap: 0.4vw;
+    }
+
+  }
